@@ -53,9 +53,10 @@ gem 'devise', '~> 4.9', '>= 4.9.3'
 
 # Used to handle file uploading
 
-gem 'shrine', '~> 3.5'
+#  gem 'shrine', '~> 3.5'
 
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -78,4 +79,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
+
+group :production do
+  gem 'pg', '~> 1.5', '>= 1.5.4' 
+end
 end
