@@ -1,0 +1,14 @@
+<h1>Editing workorder</h1>
+
+<div class="card">
+  <div class="card-body">
+    <%= render "form", workorder: @workorder %>
+  </div>
+</div>
+
+<br>
+
+<div>
+  <%= link_to "Show this workorder", @workorder, class:"btn btn-success" %> 
+  <%= link_to "Back to workorders", workorders_path, class:"btn btn-dark" %>
+</div>

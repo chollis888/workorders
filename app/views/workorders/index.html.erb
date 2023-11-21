@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Workorders</h1>
+  </div>
+
+      <div class="card-body">
+        <div id="workorders">
+
+          <table class="table table-hover table-border">
+         
+            <thead>
+              <tbody>
+               <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">City</th>
+                <th scope="col">Show WO</th>
+               </tr>
+              <tbody>
+            </thead>  
+       
+               <% @workorders.each do |workorder| %>
+               <%= render workorder %>
+     
+                <% end %>
+
+
+           </table>
+
+          <%= link_to "New workorder", new_workorder_path, class:"btn btn-info" %>
+
+        </div>
+      </div>
+</div>
+
+
+
+
+

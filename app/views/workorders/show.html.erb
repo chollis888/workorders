@@ -1,0 +1,30 @@
+
+
+
+
+<div class="container jumbotron" %>
+
+<p>
+  <h1 class="display-4">
+   <%= @workorder.first_name %>
+   <%= @workorder.last_name %>
+  </h1>
+</p>
+
+<p class="lead">
+    <%= @workorder.phone %>  |
+    <%= @workorder.email %>  |
+    <%= @workorder.city %>
+</p>
+
+<div>
+  <%= link_to "Edit this workorder", edit_workorder_path(@workorder), class:"btn btn-secondary" %> 
+  <%= link_to "Back to workorders", workorders_path, class:"btn btn-dark" %>
+
+ </div> 
+ <br>
+<div>
+
+  <%= button_to "Destroy this workorder", @workorder, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:'btn btn-warning' %>
+</div>
+
