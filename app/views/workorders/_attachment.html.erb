@@ -8,6 +8,10 @@
    		<% video_tag(url_for(workorder.file), class:"message-video", controls: "") %>
    	<% elsif workorder.file.audio? %>
    		<%= audio_tag(url_for(workorder.file), class:"message-audio", controls: "") %>
+      <%= esif file.previewable? %>
+      <li>
+        <%= image_tag file.preview(resize_to_limit: [100, 100]) %>
+      </li>
    	<% end %>	
 
    </div>
