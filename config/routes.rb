@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :attachments
   devise_for :users
   resources :workorders
   get 'home/about'
