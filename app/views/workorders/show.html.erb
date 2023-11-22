@@ -2,29 +2,38 @@
 
 
 
-<div class="container jumbotron" %>
+<div class="card">
+  <div class="card-header">
+    <h4>
+      <%= @workorder.first_name %>
+      <%= @workorder.last_name %>
+    </h4>
+  </div>
 
-<p>
-  <h1 class="display-4">
-   <%= @workorder.first_name %>
-   <%= @workorder.last_name %>
-  </h1>
-</p>
+  <div class="card-body">
+    <p class="lead">
+      <%= @workorder.phone %>  |
+      <%= @workorder.email %>  |
+      <%= @workorder.city %>
+    </p>
+  </div>
 
-<p class="lead">
-    <%= @workorder.phone %>  |
-    <%= @workorder.email %>  |
-    <%= @workorder.city %>
-</p>
+  <div>
+     <%= render 'workorders/attachment', workorder: @workorder %>
+  </div>
 
-<div>
-  <%= link_to "Edit this workorder", edit_workorder_path(@workorder), class:"btn btn-secondary" %> 
-  <%= link_to "Back to workorders", workorders_path, class:"btn btn-dark" %>
 
- </div> 
- <br>
-<div>
 
-  <%= button_to "Destroy this workorder", @workorder, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:'btn btn-warning' %>
-</div>
+   <br>
 
+  <div class= 'container'>
+
+    <%= button_to "Destroy this workorder", @workorder, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:'btn btn-outline-danger' %>
+   <br>
+  </div>
+
+  </div> 
+ 
+  <br>
+    <%= link_to "Edit this workorder", edit_workorder_path(@workorder), class:"btn btn-secondary" %> 
+    <%= link_to "Back to workorders", workorders_path, class:"btn btn-dark" %>

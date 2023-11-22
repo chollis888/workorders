@@ -1,4 +1,4 @@
 class Workorder < ApplicationRecord
- has_one_attached :file
- has_many :attachments
+ has_one_attached :file, dependent: :destroy
+
 end

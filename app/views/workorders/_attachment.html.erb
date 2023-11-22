@@ -1,0 +1,14 @@
+<% if workorder.file.attached? %>
+   <div class="row">
+   	<% if workorder.file.image? %>
+   		<div class="message-image-container">
+   			<%= image_tag(workorder.file, class:"message-image") %>
+   		</div>
+   	<% elsif workorder.file.video? %>
+   		<% video_tag(url_for(workorder.file), class:"message-video", controls: "") %>
+   	<% elsif workorder.file.audio? %>
+   		<%= audio_tag(url_for(workorder.file), class:"message-audio", controls: "") %>
+   	<% end %>	
+
+   </div>
+<% end %>

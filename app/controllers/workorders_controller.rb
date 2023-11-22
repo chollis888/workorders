@@ -2,8 +2,10 @@ class WorkordersController < ApplicationController
   before_action :set_workorder, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: []
   # GET /workorders or /workorders.json
+
   def index
     @workorders = Workorder.all
+ 
   end
 
   # GET /workorders/1 or /workorders/1.json
@@ -65,6 +67,6 @@ class WorkordersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def workorder_params
-      params.require(:workorder).permit(:first_name, :last_name, :phone, :email, :city)
+      params.require(:workorder).permit(:first_name, :last_name, :phone, :email, :city, :file)
     end
 end
